@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fff0f5, #f8e8ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 650px;
+            background: rgba(255,255,255,0.96);
+            border-radius: 22px;
+            padding: 32px;
+            box-shadow: 0 15px 45px rgba(80, 30, 80, 0.15);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            color: #7b285f;
+        }
+
+        label {
+            display: block;
+            margin: 17px 0 7px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 24px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #9b3978;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .message {
+            margin-top: 25px;
+            padding: 22px;
+            border-radius: 14px;
+            background: #fff5fa;
+            color: #3d2936;
+            line-height: 1.7;
+            white-space: pre-wrap;
+            border: 1px solid #f0cadd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+
+        <h1>💌 A Special Message</h1>
+
+        <form method="POST">
+
+            <label for="name">Enter your Name:</label>
+            <input id="name" name="name" type="text" required>
+
+            <label for="f_name">Enter your Father Name:</label>
+            <input id="f_name" name="f_name" type="text" required>
+
+            <label for="cast">Write your Cast:</label>
+            <input id="cast" name="cast" type="text" required>
+
+            <button type="submit">Submit ❤️</button>
+
+        </form>
+
+        {% if message %}
+            <div class="message">{{ message }}</div>
+        {% endif %}
+
+    </div>
+</body>
+</html>
